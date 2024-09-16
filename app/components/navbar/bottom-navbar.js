@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function BottomNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,13 +13,13 @@ function BottomNavbar() {
   };
 
   return (
-    <section className='max-w-[1200px] mx-auto'>
+    <section className="max-w-[1200px] mx-auto">
       <header className="sticky inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between lg:py-6" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img className="h-8 w-auto" src="/assets/logo-v1.png" alt="" />
+              <img className="h-8 w-auto" src="/assets/logo-v1.svg" alt="" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -43,7 +43,7 @@ function BottomNavbar() {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-20 navigation">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Home</a>
+            <a href="#" className="text-lg font-semibold leading-6 text-gray-900">Home</a>
             <a href="#" className="text-sm font-semibold leading-6 text-gray-900">What we do</a>
             <a href="#" className="text-sm font-semibold leading-6 text-gray-900">What we offer</a>
             <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Contact</a>
@@ -60,7 +60,7 @@ function BottomNavbar() {
               <div className="flex items-center justify-between">
                 <a href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">Your Company</span>
-                  <img className="h-8 w-auto" src="/assets/logo-v1.png" alt="" />
+                  <img className="h-8 w-auto" src="/assets/logo-v1.svg" alt="" />
                 </a>
                 <button
                   id="mobile-menu-close"

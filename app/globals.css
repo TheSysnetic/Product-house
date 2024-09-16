@@ -41,6 +41,9 @@ body{
 .font-custom {
   font-family: "Magtis ExtBd";
 }
+.bg-image{
+  background-image: url(/assets/footer.svg);
+}
 
 
 :root {
