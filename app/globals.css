@@ -38,7 +38,9 @@ body{
 .navigation a:hover::before {
   width: 50%; /* Expand underline to the full width of the word */
 }
-
+.font-custom {
+  font-family: "Magtis ExtBd";
+}
 
 
 :root {
