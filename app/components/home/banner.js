@@ -11,10 +11,10 @@ function Banner() {
                     </div>
                     <div className="text-white font-normal text-lg">
                         In the world of startups, second place is just the first loser. 
-                        That's why at Product House, we're not interested in participation trophies. 
-                        We're here to close deals, crush competition, and create market leaders.
+                        That&apos;s why at Product House, we&apos;re not interested in participation trophies. 
+                        We&apos;re here to close deals, crush competition, and create market leaders.
                     </div>
-                    <button className="rounded text-primary1 bg-primary2 w-[212px] h-[52px] font-bold text-[16px] mt-3">Let’s build together</button>
+                    <button className="rounded text-primary1 bg-primary2 w-[212px] h-[52px] font-bold text-[16px] mt-3">Let&apos;s build together</button>
                 </div>
                 
                 <img src="/assets/banner.svg" className="min-w-[600px]"/>

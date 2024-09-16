@@ -43,13 +43,13 @@ function BottomNavbar() {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-20 navigation">
-            <a href="#" className="text-lg font-semibold leading-6 text-gray-900">Home</a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">What we do</a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">What we offer</a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Contact</a>
+            <a href="#" className="text-[16px] font-semibold leading-6 text-gray-900">Home</a>
+            <a href="#" className="text-[16px] font-semibold leading-6 text-gray-900">What we do</a>
+            <a href="#" className="text-[16px] font-semibold leading-6 text-gray-900">What we offer</a>
+            <a href="#" className="text-[16px] font-semibold leading-6 text-gray-900">Contact</a>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a className="bg-primary1 rounded-lg px-11 py-1 font-semibold leading-7 text-white text-sm cursor-pointer">Get in touch</a>
+            <a className="bg-primary1 rounded-lg px-11 py-2 font-semibold leading-7 text-white text-[16px] cursor-pointer">Get in touch</a>
           </div>
         </nav>
         {/* Mobile menu */}

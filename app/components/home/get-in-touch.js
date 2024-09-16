@@ -8,8 +8,8 @@ function GetInTouch() {
                 Get in touch
             </div>
             <div className="text-black font-normal text-xl">
-                Remember, in the world of startups, you're either disrupting or being disrupted. With Product House, 
-                disruption isn't just a buzzword - it's a way of life.
+                Remember, in the world of startups, you&apos;re either disrupting or being disrupted. With Product House, 
+                disruption isn&apos;t just a buzzword - it&apos;s a way of life.
             </div>
             <form>
                 <div className="grid grid-cols-3 gap-5">

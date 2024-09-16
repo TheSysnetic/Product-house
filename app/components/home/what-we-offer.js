@@ -9,8 +9,8 @@ function WhatWeOffer() {
                 Our winning playbook
             </div>
             <div className="text-white font-normal text-[20px]">
-                We don"t just play the game - we change it. Our winning playbook is designed to transform your startup from a mere 
-                player into the MVP of your industry. Here"s what we offer
+                We don&apos;t just play the game - we change it. Our winning playbook is designed to transform your startup from a mere 
+                player into the MVP of your industry. Here&apos;s what we offer
             </div>
             {/* Card one */}
             <div className="bg-secondary rounded-2xl p-5">
@@ -37,7 +37,7 @@ function WhatWeOffer() {
                       <ul className="ml-5">
                           <li className="text-white list-disc font-semibold">Brand Identity Development</li>
                           <li className="text-white"> 
-                            We don't just design logos; we craft visual empires that burn themselves into the public consciousness.
+                            We don&apos;t just design logos; we craft visual empires that burn themselves into the public consciousness.
                           </li>
                         </ul>
                     </div>
@@ -45,7 +45,7 @@ function WhatWeOffer() {
                       <ul className="ml-5">
                           <li className="text-white list-disc font-semibold">User Journey and UX Research</li>
                           <li className="text-white"> 
-                            We don't just map the user journey; we pave it with gold and line it with proper conceptual models, rationales and frameworks.
+                            We don&apos;t just map the user journey; we pave it with gold and line it with proper conceptual models, rationales and frameworks.
                           </li>
                         </ul>
                     </div>                    
@@ -86,7 +86,7 @@ function WhatWeOffer() {
                       <ul className="ml-5">
                           <li className="text-white list-disc font-semibold">Quality Assurance</li>
                           <li className="text-white"> 
-                            We"re perfectionists, because in hardware, second chances are for the weak.
+                            We&apos;re perfectionists, because in hardware, second chances are for the weak.
                           </li>
                         </ul>
                     </div>                    
@@ -111,7 +111,7 @@ function WhatWeOffer() {
                         <ul className="ml-5">
                             <li className="text-white list-disc font-semibold">Competitive Edge Definition</li>
                             <li className="text-white">
-                              We don't just help you compete; we position you to render the competition irrelevant.
+                              We don&apos;t just help you compete; we position you to render the competition irrelevant.
                             </li>
                           </ul>
                       </div>
@@ -119,7 +119,7 @@ function WhatWeOffer() {
                         <ul className="ml-5">
                             <li className="text-white list-disc font-semibold">Financial Modeling</li>
                             <li className="text-white"> 
-                              Our financial strategies aren't just about staying afloat; they"re about building an empire.
+                              Our financial strategies aren&apos;t just about staying afloat; they&apos;re about building an empire.
                             </li>
                           </ul>
                       </div>
@@ -127,7 +127,7 @@ function WhatWeOffer() {
                         <ul className="ml-5">
                             <li className="text-white list-disc font-semibold">Pitch Deck Mastery</li>
                             <li className="text-white"> 
-                              We craft pitches that don't just impress investors; they make them fight for the privilege of funding you.
+                              We craft pitches that don&apos;t just impress investors; they make them fight for the privilege of funding you.
                             </li>
                           </ul>
                       </div>                    
