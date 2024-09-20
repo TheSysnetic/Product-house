@@ -1,8 +1,34 @@
-"use client"
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+
+// Custom smooth scroll function
+const smoothScrollTo = (target, duration = 1000) => {
+  const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  let startTime = null;
+
+  const ease = (t, b, c, d) => {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
+    t--;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
+  };
+
+  const animation = (currentTime) => {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const run = ease(timeElapsed, startPosition, distance, duration);
+    window.scrollTo(0, run);
+    if (timeElapsed < duration) requestAnimationFrame(animation);
+  };
+
+  requestAnimationFrame(animation);
+};
 
 function BottomNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("banner");
 
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -12,14 +38,55 @@ function BottomNavbar() {
     setIsMobileMenuOpen(false);
   };
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      smoothScrollTo(section, 1500);
+      setActiveSection(id); // Set active section when manually scrolling
+    }
+  };
+
+  // Intersection Observer to detect when sections are in view
+  useEffect(() => {
+    const sections = ["banner", "what-we-do", "what-we-offer", "contact"];
+    const observerOptions = {
+      root: null,
+      threshold: 0.5, // When 50% of the section is visible
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all sections
+    sections.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+
+    // Clean up the observer on component unmount
+    return () => {
+      sections.forEach((id) => {
+        const section = document.getElementById(id);
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
+
   return (
-    <section className="max-w-[1200px] mx-auto">
-      <header className="sticky inset-x-0 top-0 z-50">
-        <nav className="flex items-center justify-between lg:py-6" aria-label="Global">
+    <section className="sticky inset-x-0 top-0 z-50 bg-white">
+      <header className="max-w-[1200px] mx-auto px-5 xl:px-0">
+        <nav className="flex items-center justify-between py-5 lg:py-6" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img className="h-8 w-auto" src="/assets/logo-v1.svg" alt="" />
+              <img className="w-auto" src="/assets/logo-v1.svg" alt="Logo" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -42,14 +109,48 @@ function BottomNavbar() {
               </svg>
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-20 navigation">
-            <a href="#" className="text-[16px] font-semibold leading-6 text-gray-900">Home</a>
-            <a href="#" className="text-[16px] font-semibold leading-6 text-gray-900">What we do</a>
-            <a href="#" className="text-[16px] font-semibold leading-6 text-gray-900">What we offer</a>
-            <a href="#" className="text-[16px] font-semibold leading-6 text-gray-900">Contact</a>
+          <div className="hidden lg:flex lg:gap-x-14 xl:gap-x-20 navigation">
+            <a
+              href="#banner"
+              onClick={() => scrollToSection("banner")}
+              className={`text-[16px] font-semibold leading-6 ${
+                activeSection === "banner" ? "!text-primary2" : "text-gray-900"
+              }`}
+            >
+              Home
+            </a>
+            <a
+              href="#what-we-do"
+              onClick={() => scrollToSection("what-we-do")}
+              className={`text-[16px] font-semibold leading-6 ${
+                activeSection === "what-we-do" ? "!text-primary2" : "text-gray-900"
+              }`}
+            >
+              What we do
+            </a>
+            <a
+              href="#what-we-offer"
+              onClick={() => scrollToSection("what-we-offer")}
+              className={`text-[16px] font-semibold leading-6 ${
+                activeSection === "what-we-offer" ? "!text-primary2" : "text-gray-900"
+              }`}
+            >
+              What we offer
+            </a>
+            <a
+              href="#contact"
+              onClick={() => scrollToSection("contact")}
+              className={`text-[16px] font-semibold leading-6 ${
+                activeSection === "contact" ? "!text-primary2" : "text-gray-900"
+              }`}
+            >
+              Contact
+            </a>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a className="bg-primary1 rounded-lg px-11 py-2 font-semibold leading-7 text-white text-[16px] cursor-pointer">Get in touch</a>
+            <a href="#contact" onClick={() => scrollToSection("contact")} className="bg-primary1 rounded-lg px-11 py-2 font-semibold leading-7 text-white text-[16px] cursor-pointer hover:bg-[#356760] focus:bg-[#112E2A]">
+              Get in touch
+            </a>
           </div>
         </nav>
         {/* Mobile menu */}
@@ -84,13 +185,62 @@ function BottomNavbar() {
               <div className="mt-6 flow-root">
                 <div className="-my-6 divide-y divide-gray-500/10">
                   <div className="space-y-2 py-6">
-                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
-                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">What we do</a>
-                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">What we offer</a>
-                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
+                    <a
+                      href="#banner"
+                      onClick={() => {
+                        scrollToSection("banner");
+                        handleMobileMenuClose();
+                      }}
+                      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
+                        activeSection === "banner" ? "!text-primary2" : "text-gray-900"
+                      } hover:bg-gray-50`}
+                    >
+                      Home
+                    </a>
+                    <a
+                      href="#what-we-do"
+                      onClick={() => {
+                        scrollToSection("what-we-do");
+                        handleMobileMenuClose();
+                      }}
+                      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
+                        activeSection === "what-we-do" ? "!text-primary2" : "text-gray-900"
+                      } hover:bg-gray-50`}
+                    >
+                      What we do
+                    </a>
+                    <a
+                      href="#what-we-offer"
+                      onClick={() => {
+                        scrollToSection("what-we-offer");
+                        handleMobileMenuClose();
+                      }}
+                      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
+                        activeSection === "what-we-offer" ? "!text-primary2" : "text-gray-900"
+                      } hover:bg-gray-50`}
+                    >
+                      What we offer
+                    </a>
+                    <a
+                      href="#contact"
+                      onClick={() => {
+                        scrollToSection("contact");
+                        handleMobileMenuClose();
+                      }}
+                      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
+                        activeSection === "contact" ? "!text-primary2" : "text-gray-900"
+                      } hover:bg-gray-50`}
+                    >
+                      Contact
+                    </a>
                   </div>
                   <div className="py-6">
-                    <a className="bg-primary1 rounded-lg px-11 py-2 font-semibold leading-7 text-white text-sm cursor-pointer">Get in touch</a>
+                    <a href="#contact" onClick={() => {
+                        scrollToSection("contact");
+                        handleMobileMenuClose();
+                      }} className="bg-primary1 rounded-lg px-11 py-2 font-semibold leading-7 text-white text-sm cursor-pointer hover:bg-[#356760] focus:bg-[#112E2A]">
+                      Get in touch
+                    </a>
                   </div>
                 </div>
               </div>

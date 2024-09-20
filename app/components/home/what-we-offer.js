@@ -2,8 +2,8 @@ import React from "react"
 
 function WhatWeOffer() {
   return (
-    <section className="bg-black">
-      <div className="max-w-[1200px] mx-auto py-20">
+    <section className="bg-black" id="what-we-offer">
+      <div className="max-w-[1200px] mx-auto py-20 px-5 xl:px-0">
         <div className="flex flex-col gap-y-10">
             <div className="text-white font-bold text-[30px]">
                 Our winning playbook
@@ -14,7 +14,7 @@ function WhatWeOffer() {
             </div>
             {/* Card one */}
             <div className="bg-secondary rounded-2xl p-5">
-              <div className="flex gap-x-32 justify-between">
+              <div className="flex flex-col lg:flex-row  gap-x-32 justify-between">
                 <div className="flex flex-col gap-y-5">
                     <div className="text-primary2 font-bold text-[40px]">
                         Digital Design
@@ -55,7 +55,7 @@ function WhatWeOffer() {
             </div>
             {/* Card two */}
             <div className="bg-secondary rounded-2xl p-5">
-              <div className="flex gap-x-32 justify-between">
+              <div className="flex flex-col lg:flex-row  gap-x-32 justify-between">
                 <div className="flex flex-col gap-y-5">
                     <div className="text-primary2 font-bold text-[40px]">
                       Hardware Product Development
@@ -96,7 +96,7 @@ function WhatWeOffer() {
             </div>
             {/* Card Three */}
             <div className="bg-secondary rounded-2xl p-5">
-                <div className="flex gap-x-32 justify-between">
+                <div className="flex flex-col lg:flex-row  gap-x-32 justify-between">
                   <div className="flex flex-col gap-y-5">
                       <div className="text-primary2 font-bold text-[40px]">
                         Hardware Product Development

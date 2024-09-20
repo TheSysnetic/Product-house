@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 function TopNavbar() {
   return (
-    <section className="bg-primary1 hidden lg:block">
+    <section className="bg-primary1 hidden lg:block px-5 xl:px-0">
         <div className="max-w-[1200px] mx-auto  py-1.5">
             <nav className="flex items-center justify-between px-6 lg:px-0" aria-label="Global">
                 <div className="flex gap-24">

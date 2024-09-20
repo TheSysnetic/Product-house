@@ -3,9 +3,9 @@ import React from 'react'
 function Footer() {
   return (
     <section className='bg-primary1'>
-        <div className="max-w-[1200px] mx-auto bg-image object-contain bg-no-repeat bg-right-bottom">
-            <div className="grid grid-cols-3 gap-32 min-h-[390px] items-center">
-                <div className='flex flex-col gap-5 '>
+        <div className="max-w-[1200px] mx-auto bg-image object-contain bg-no-repeat md:bg-right-bottom px-5 xl:px-0">
+            <div className="grid grid-col-reverse lg:grid-cols-3 gap-32 min-h-[390px] items-center py-10">
+                <div className='flex flex-col gap-5 lg:order-none order-last'>
                     <img src="/assets/logo-v2.svg" className='w-full'/>
                     <p className='text-white font-inherit font-normal'>Hello, we are Product House. We empower design + technology solutions.</p>
                     <div className='flex gap-x-7 mt-12'>
