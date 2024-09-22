@@ -80,7 +80,7 @@ function BottomNavbar() {
   }, []);
 
   return (
-    <section className="sticky inset-x-0 top-0 z-50 bg-white">
+    <section className="sticky inset-x-0 top-0 z-50 bg-white shadow-md">
       <header className="max-w-[1200px] mx-auto px-5 xl:px-0">
         <nav className="flex items-center justify-between py-5 lg:py-6" aria-label="Global">
           <div className="flex lg:flex-1">

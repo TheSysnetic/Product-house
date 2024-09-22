@@ -1,6 +1,7 @@
 "use client"
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Link from "next/link"
 import React from "react"
 function TopNavbar() {
   return (
@@ -18,9 +19,15 @@ function TopNavbar() {
                     </div>
                 </div>
                 <div className="flex gap-x-7">
-                    <img src="/assets/behance.svg" />
-                    <img src="/assets/instagram.svg" />
-                    <img src="/assets/linkedin.svg" />
+                    <Link href={'https://www.behance.net/producthouse'} target="_blank">
+                        <img src="/assets/behance.svg" />
+                    </Link>
+                    <Link href={'https://www.instagram.com/producthouse__/'} target="_blank">
+                        <img src="/assets/instagram.svg" />
+                    </Link>
+                    <Link href={'https://www.linkedin.com/company/product-house1/about/'} target="_blank">
+                        <img src="/assets/linkedin.svg" />
+                    </Link>
                 </div>
             </nav>
         </div>

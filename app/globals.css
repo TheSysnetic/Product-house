@@ -4,6 +4,10 @@
 
 @import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
 
+@font-face {
+  font-family: "CustomFont";
+  src: url("/font/Magtis-ExtraBold.otf") format("opentype");
+}
 body{
   box-sizing: border-box;
   margin: 0;
@@ -39,7 +43,7 @@ body{
   width: 50%; /* Expand underline to the full width of the word */
 }
 .font-custom {
-  font-family: "Magtis ExtBd";
+  font-family: "CustomFont", sans-serif;
 }
 .bg-image{
   background-image: url(/assets/footer.svg);
