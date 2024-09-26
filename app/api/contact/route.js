@@ -17,7 +17,7 @@ export async function POST(req) {
       from: email,
       to: toEmail,
       subject: `New Inquiry from ${name} - Product House`,
-      text: `Name: ${name} \n Email: ${email} \n Phone: ${phone || 'N/A'} \n\n Message: \n ${message}`,
+      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\n\nMessage:\n${message}`,
     });
 
     return new Response(JSON.stringify({ success: true, message: 'Email sent successfully' }), {
