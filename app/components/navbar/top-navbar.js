@@ -11,11 +11,11 @@ function TopNavbar() {
                 <div className="flex gap-24">
                     <div className="flex gap-x-4 text-white justify-center items-center font-light text-[15px]">
                         <FontAwesomeIcon icon={faLocationDot} />
-                        <span>Montclair , New Jersey</span>
+                        <span>Montclair, New Jersey</span>
                     </div>
                     <div className="flex gap-x-4 text-white justify-center items-center font-light text-[15px]">
                         <FontAwesomeIcon icon={faPhone} />
-                        <a href="tel:+12012904909">+1 2012904909</a>
+                        <a href="tel:+12012904909">+1 (201) 290-4909</a>
                     </div>
                 </div>
                 <div className="flex gap-x-7">
