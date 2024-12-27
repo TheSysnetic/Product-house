@@ -7,7 +7,7 @@ function GetInTouch() {
     email: '',
     phone: '',
     message: '',
-    toEmail: 'mateen@thesysnetic.com'
+    toEmail: 'no-reply@producthouse.com'
   });
   
   const [successMessage, setSuccessMessage] = useState('');

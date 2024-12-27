@@ -5,17 +5,16 @@ export async function POST(req) {
 
   try {
     const transporter = nodemailer.createTransport({
-      host: "sandbox.smtp.mailtrap.io",
-      port: 2525,
+      service: 'gmail',
       auth: {
-        user: '9191df4fc0e1e8',
-        pass: '9e6785d21ea959',
+        user: 'producthouse365@gmail.com',
+        pass: 'ymlk ayts odib pzuh',  
       },
     });
 
     await transporter.sendMail({
-      from: email,
-      to: toEmail,
+      from: 'no-reply@producthouse.com',
+      to: 'producthouse365@gmail.com',
       subject: `New Inquiry from ${name} - Product House`,
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\n\nMessage:\n${message}`,
     });
